@@ -13,7 +13,7 @@ namespace PruneBackups
         public static IFileRepository FileRepository = new ServerFileRepository();
         public static ISystemTime SystemTime = new SystemTime();
         public static int Main(string[] args)
-             => CommandLineApplication.Execute<Program>(args.Length == 0 ? new [] {"-h"} : args);
+             => CommandLineApplication.Execute<Program>(args.Length == 0 ? new[] { "-h" } : args);
 
         [Option(Description = "The path of backups")]
         public string Path { get; }
@@ -31,7 +31,7 @@ namespace PruneBackups
                 Log($"Path: {Path} . Does not exist");
                 return;
             }
-              
+
             var maximumAge = SystemTime.Now.AddDays(-Age);
 
             var filesInPath = FileRepository.GetFiles(Path)
@@ -45,7 +45,7 @@ namespace PruneBackups
                 if (createdDate < maximumAge)
                 {
                     Log($"Deleting file: '{filename}'");
-                    if(!DryRun)
+                    if (!DryRun)
                         FileRepository.Delete(filename);
 
                 }

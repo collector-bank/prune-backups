@@ -46,8 +46,9 @@ namespace PruneBackups
                 {
                     Log($"Deleting file: '{filename}'");
                     if (!DryRun)
+                    {
                         FileRepository.Delete(filename);
-
+                    }
                 }
                 else
                 {

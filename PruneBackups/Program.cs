@@ -1,9 +1,9 @@
-﻿using System;
+﻿using McMaster.Extensions.CommandLineUtils;
+using System;
 using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Text.RegularExpressions;
-using McMaster.Extensions.CommandLineUtils;
 
 namespace PruneBackups
 {
@@ -16,7 +16,7 @@ namespace PruneBackups
              => CommandLineApplication.Execute<Program>(args.Length == 0 ? new[] { "-h" } : args);
 
         [Option(Description = "The path of backups")]
-        public string Path { get; }
+        public string Path { get; } = string.Empty;
 
         [Option(Description = "The maxiumum age of backups")]
         public int Age { get; } = 60;
@@ -28,7 +28,7 @@ namespace PruneBackups
         {
             if (!FileRepository.PathExists(Path))
             {
-                Log($"Path: {Path} . Does not exist");
+                Log($"Path: '{Path}' does not exist");
                 return;
             }
 

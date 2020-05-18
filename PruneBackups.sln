@@ -1,8 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.27428.2043
-MinimumVisualStudioVersion = 10.0.40219.1
+# Visual Studio Version 16
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PruneBackups", "PruneBackups\PruneBackups.csproj", "{A706DCFC-FF89-4903-A6D6-8A1222DA2472}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PruneBackups.Tests", "PruneBackups.Tests\PruneBackups.Tests.csproj", "{63FE468E-1913-48F4-99F1-1134F29D9BD5}"

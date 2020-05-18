@@ -1,9 +1,7 @@
-using System;
-using System.Globalization;
-using System.IO;
-using System.Linq;
 using FakeItEasy;
 using NUnit.Framework;
+using System;
+using System.Linq;
 
 namespace PruneBackups.Tests
 {
